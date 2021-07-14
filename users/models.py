@@ -23,6 +23,10 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
+    order_number = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
